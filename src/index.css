@@ -1,0 +1,99 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+::-webkit-scrollbar {
+  scroll-behavior: smooth;
+  width: 6px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #ea5d26;
+  border-radius: 8px;
+}
+html {
+  background-color: #ffffff;
+  overflow-x: hidden;
+}
+
+body {
+  overflow-x: hidden;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  background-color: #ffffff;
+}
+
+.thin-scrollbar {
+  scrollbar-width: thin;
+}
+.thin-scrollbar::-webkit-scrollbar {
+  width: 4px;
+  height: 4px;
+}
+.thin-scrollbar::-webkit-scrollbar-track {
+  background: #ea5d26;
+  border-radius: 4px;
+}
+.thin-scrollbar::-webkit-scrollbar-thumb {
+  background: #ea5d26;
+  border-radius: 4px;
+}
+.thin-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: #ea5d26;
+}
+@layer utilities {
+  .wrapper {
+    @apply max-w-7xl mx-auto px-4;
+  }
+  .title-heading {
+    @apply text-4xl sm:text-5xl font-bold;
+  }
+  .small-heading {
+    @apply text-3xl font-bold;
+  }
+  .softTitle {
+    @apply text-lg font-semibold;
+  }
+  .hardTitle {
+    @apply text-xl font-bold;
+  }
+  .companyName {
+    @apply text-lg text-primary;
+  }
+  .paddingTop {
+    @apply pt-[3rem];
+  }
+  .paddingBottom {
+    @apply pb-[3rem];
+  }
+}
+
+@keyframes flyParrot {
+  0% {
+    transform: translate(-100%, -50%) rotate(-20deg); /* Starts from the left side */
+    opacity: 0;
+  }
+  25% {
+    transform: translate(-50%, -30%) rotate(15deg); /* Moves towards the center */
+  }
+  50% {
+    transform: translate(0%, -40%) rotate(-15deg); /* Moves closer to the right */
+  }
+  75% {
+    transform: translate(30%, -20%) rotate(10deg); /* Nears the button */
+    opacity: 1;
+  }
+  100% {
+    transform: translate(50%, -120%) rotate(0deg); /* Lands above the button */
+    opacity: 1;
+  }
+}
+
+.parrot-animation {
+  position: absolute;
+  /* animation: flyParrot 8s cubic-bezier(0.4, 0, 0.2, 1); */
+  z-index: 1000;
+  right: 0;
+  top: 0;
+  pointer-events: none;
+}
