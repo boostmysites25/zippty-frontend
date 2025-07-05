@@ -12,7 +12,7 @@ export const navLinks = [
   { path: "/about-us", label: "About Us" },
   { path: "/contact-us", label: "Contact Us" },
 ];
-export const BASE_API_URL = "https://zippy-backend.vercel.app";
+export const BASE_API_URL = "https://zippty-backend.vercel.app";
 // export const BASE_API_URL = "http://localhost:7070";
 export const petCareFeatures = [
   {
