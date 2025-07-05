@@ -1,15 +1,15 @@
 import React, { useState } from "react";
-import Banner from "../Component /Banner";
-import Experience from "../Component /Experience";
-import WhyChooseUs from "../Component /WhyChooseUs";
-import OurMission from "../Component /OurMission";
-import OurTeam from "../Component /OurTeam";
+import Banner from "../Component/Banner";
+import Experience from "../Component/Experience";
+import WhyChooseUs from "../Component/WhyChooseUs";
+import OurMission from "../Component/OurMission";
+import OurTeam from "../Component/OurTeam";
 import aboutvideo from "../assets/video/aboutsectionvideo.mp4";
 import ReactPlayer from "react-player";
 import { FaPlay } from "react-icons/fa";
-import Testimonials from "../Component /Testimonials";
+import Testimonials from "../Component/Testimonials";
 import aboutuspetsimage from "../assets/images/aboutuspetsimage.png";
-import AboutStore from "../Component /AboutStore";
+import AboutStore from "../Component/AboutStore";
 
 const AboutPage = () => {
   const [isPlaying, setIsPlaying] = useState(false);

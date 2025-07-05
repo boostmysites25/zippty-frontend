@@ -1,9 +1,9 @@
 import React from "react";
-import Banner from "../Component /Banner";
-import AllProducts from "../Component /AllProducts";
-import CategorySlider from "../Component /CategorySlider";
+import Banner from "../Component/Banner";
+import AllProducts from "../Component/AllProducts";
+import CategorySlider from "../Component/CategorySlider";
 import shoppetsimage from "../assets/images/shoppetsimage.png";
-import TwoDogs from "../Component /TwoDogs";
+import TwoDogs from "../Component/TwoDogs";
 
 const ProductsPage = () => {
   const aboutBannerDetails = {

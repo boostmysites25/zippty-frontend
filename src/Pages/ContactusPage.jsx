@@ -1,8 +1,8 @@
 import React from "react";
 import contactuspetimage from "../assets/images/contactuspetimage.png";
-import Banner from "../Component /Banner";
-import ContactForm from "../Component /LeadForm";
-import MapComponent from "../Component /MapComponent";
+import Banner from "../Component/Banner";
+import ContactForm from "../Component/LeadForm";
+import MapComponent from "../Component/MapComponent";
 
 const ContactusPage = () => {
   const homeBannerDetails = {

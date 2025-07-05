@@ -2,8 +2,8 @@ import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import cartpagepetsimage from "../assets/images/cartpagepetsimage.png";
-import Banner from "../Component /Banner";
-import CartItems from "../Component /CartItems";
+import Banner from "../Component/Banner";
+import CartItems from "../Component/CartItems";
 import {
   addAddress,
   getUserDetails,

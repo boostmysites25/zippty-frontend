@@ -2,7 +2,7 @@ import React from "react";
 import { useWishlist } from "../Store/wishlistContext";
 import { FaHeart } from "react-icons/fa";
 import { Link } from "react-router-dom";
-import ProductGrid from "../Component /ProductGrid";
+import ProductGrid from "../Component/ProductGrid";
 
 const WishlistPage = () => {
   const { wishlist } = useWishlist();

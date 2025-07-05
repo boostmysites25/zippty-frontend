@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from "react";
-import Banner from "../Component /Banner";
+import Banner from "../Component/Banner";
 import homepagepetsimage from "../assets/images/homepagepetsimage.png";
-// import CategorySlider from "../Component /CategorySlider";
-import FeaturedProducts from "../Component /FeaturedProducts";
-import HomeAbout from "../Component /HomeAbout";
-import Testimonials from "../Component /Testimonials";
-import Blogs from "../Component /Blogs";
-import ProductGrid from "../Component /ProductGrid";
+// import CategorySlider from "../Component/CategorySlider";
+import FeaturedProducts from "../Component/FeaturedProducts";
+import HomeAbout from "../Component/HomeAbout";
+import Testimonials from "../Component/Testimonials";
+import Blogs from "../Component/Blogs";
+import ProductGrid from "../Component/ProductGrid";
 // import { products } from "../util/productsDetails";
 import { fetchProducts } from "../api/productapi";
 const HomePage = () => {

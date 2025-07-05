@@ -5,9 +5,9 @@ import { useCart } from "../Store/cartContext";
 
 import productdetailspetsimage from "../assets/images/productdetailspetsimage.png";
 import { addToCart, fetchProducts, getProductById } from "../api/productapi";
-import Banner from "../Component /Banner";
-import ProductGrid from "../Component /ProductGrid";
-import TwoDogs from "../Component /TwoDogs";
+import Banner from "../Component/Banner";
+import ProductGrid from "../Component/ProductGrid";
+import TwoDogs from "../Component/TwoDogs";
 import { toast } from "react-toastify";
 
 const ProductDetails = () => {
