@@ -12,8 +12,8 @@ import { fetchProducts } from "../api/productapi";
 const HomePage = () => {
   const [products, setProducts] = useState([]);
   const homeBannerDetails = {
-    mainHeading: "A pet store with everything you need",
-    paragraph: `At Zippty, we know your pets are more than just animals—they’re family. Whether you have a curious kitten or an energetic dog,`,
+    mainHeading: "The best for your best friend.",
+    paragraph: `At Zippty, we know your pets are more than just animals—they're family. Whether you have a curious kitten or an energetic dog,`,
     image: homepagepetsimage,
     isHome: true,
     isButton: true,
@@ -33,7 +33,7 @@ const HomePage = () => {
       {/* <FeaturedProducts /> */}
       <HomeAbout />
       <div>
-        <h1 className="title-heading text-center">Best selling products</h1>
+        <h1 className="title-heading text-center" data-aos="fade-up">Best selling products</h1>
         <ProductGrid products={products.slice(0, 8)} />
       </div>
       <Testimonials />

@@ -86,10 +86,12 @@ const AllProducts = () => {
             </select>
           </div> */}
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-            {products.map((product) => (
+            {products.map((product, index) => (
               <div
                 key={product.title}
                 className="group relative border rounded-lg overflow-hidden"
+                data-aos="fade-up"
+                data-aos-delay={index * 100}
               >
                 <Link to={`/product/${product.id}`}>
                   <div className="aspect-square overflow-hidden">

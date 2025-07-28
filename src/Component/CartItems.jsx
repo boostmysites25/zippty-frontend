@@ -202,13 +202,13 @@ const CartItems = ({ setOpenCheckOut }) => {
             CART TOTAL = ₹{calculateTotal()?.toFixed(2)}
           </div>
           <div className="relative">
-            {cartItems.length > 0 && (
+            {/* {cartItems.length > 0 && (
               <img
                 src={bird}
                 alt="Flying Parrot"
                 className="absolute w-[5rem] -top-[3rem] -left-[2rem] scale-x-[-1]"
               />
-            )}
+            )} */}
             <button
               ref={buttonRef}
               onClick={() => setOpenCheckOut(true)}

@@ -24,7 +24,7 @@ const AdminAddProduct = () => {
     defaultValues: {
       name: isEditMode
         ? ""
-        : "BABORUI 3.0 Upgraded Interactive Cat Toy with 2-Speed Adjustment, Remote Control, Automatic, Orange",
+        : "Interactive Cat Toy with 2-Speed Adjustment, Remote Control, Automatic, Orange",
       description: "",
       amount: "",
       headings: [{ title: "", description: "" }],

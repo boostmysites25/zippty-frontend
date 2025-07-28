@@ -26,12 +26,14 @@ const Blogs = () => {
   return (
     <div>
       <div className="wrapper paddingTop paddingBottom">
-        <h1 className="title-heading text-center mb-6">News & Blog</h1>{" "}
+        <h1 className="title-heading text-center mb-6" data-aos="fade-up">News & Blog</h1>{" "}
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
-          {blogsDetails.map((obj) => (
+          {blogsDetails.map((obj, index) => (
             <Link
               to={`/blog/${obj.id}`}
               className="rounded-2xl overflow-hidden"
+              data-aos="fade-up"
+              data-aos-delay={index * 150}
             >
               <div className="relative">
                 <div className="absolute top-3 left-3 bg-black text-white px-5 py-1 rounded-full font-medium">

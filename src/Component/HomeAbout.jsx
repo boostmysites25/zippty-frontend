@@ -7,14 +7,14 @@ const HomeAbout = () => {
     <div className="paddingTop paddingBottom">
       <div className="wrapper">
         <div className="grid md:grid-cols-2">
-          <img src={homeaboutsection} alt="" />
-          <div className="h-full flex flex-col gap-5 relative z-10">
+          <img src={homeaboutsection} alt="" data-aos="fade-up" />
+          <div className="h-full flex flex-col gap-5 relative z-10" data-aos="fade-up" data-aos-delay="200">
             <span className="companyName">Zippty</span>
             <h1 className="title-heading">
               The smarter way to shop for your pet
             </h1>
             <p className="text-gray-600 max-w-md">
-              At Zippy, we believe playtime isn't just fun; it's essential for
+              At Zippty, we believe playtime isn't just fun; it's essential for
               your pet's physical and mental well-being. That's why we've
               combined cutting-edge technology with irresistible fun to create a
               range of interactive toys and robots designed to engage, excite,
@@ -28,7 +28,7 @@ const HomeAbout = () => {
             </Link>
           </div>
         </div>
-        <img src={homepagecompanylogos} alt="" />
+        {/* <img src={homepagecompanylogos} alt="" /> */}
       </div>
     </div>
   );

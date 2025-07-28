@@ -3,7 +3,6 @@ import Banner from "../Component/Banner";
 import Experience from "../Component/Experience";
 import WhyChooseUs from "../Component/WhyChooseUs";
 import OurMission from "../Component/OurMission";
-import OurTeam from "../Component/OurTeam";
 import aboutvideo from "../assets/video/aboutsectionvideo.mp4";
 import ReactPlayer from "react-player";
 import { FaPlay } from "react-icons/fa";
@@ -20,8 +19,8 @@ const AboutPage = () => {
     setIsPlaying(false);
   };
   const aboutBannerDetails = {
-    mainHeading: "Welcome to Zippty – Where Your Pets’ Happiness Comes First",
-    paragraph: `At Zippty, we know your pets are more than just animals—they’re family. Whether you have a curious kitten or an energetic dog, we’re here to offer everything you need to ensure they’re well cared for. From nutritious food and interactive toys to cozy beds and grooming essentials, we’ve got a wide range of products to meet the unique needs of both cats and dogs.
+    mainHeading: "Welcome to Zippty – Where Your Pet's Entertainment Comes First",
+    paragraph: `At Zippty, we understand that pets are more than just animals—they're family members who deserve the best interactive experiences. We specialize in premium interactive toys that keep your furry friends engaged, active, and happy. Our carefully selected range includes the innovative Interactive Cat Toy with 2-speed adjustment and the Joyzzz Automatic Laser Toy, designed to provide endless entertainment for your curious and energetic pets.
 `,
     image: aboutuspetsimage,
     isButton: true,
@@ -29,25 +28,15 @@ const AboutPage = () => {
   return (
     <div>
       <Banner bannerDetails={aboutBannerDetails} />
-      <div className="wrapper paddingTop paddingBottom">
+      <div className="wrapper paddingTop paddingBottom" data-aos="fade-up">
         <h2 className="title-heading">About our store</h2>
         <div className="grid md:grid-cols-2 mt-8 md:gap-10 gap-5">
           <p className="">
             At Zippty, we understand that pets are more than just
-            animals—they're cherished members of the family. Our passion for
-            animals drives us to provide top-quality pet care products that help
-            your furry friends live their healthiest, happiest lives. Whether
-            you have a playful puppy, a wise senior dog, or an adventurous
-            kitten, we’re here to offer everything you need to make sure your
-            pets feel loved, cared for, and comfortable.
+            animals—they're cherished family members who need mental stimulation and physical activity to thrive. Our passion for pet enrichment drives us to provide the highest quality interactive toys that keep your pets engaged, entertained, and healthy. Whether you have a playful young pet, an energetic adult, or a wise senior companion, we're here to offer innovative solutions that satisfy their natural instincts and curiosity.
           </p>
           <p>
-            With years of experience in the pet care industry, we’ve seen the
-            difference the right products can make. That’s why we’ve dedicated
-            ourselves to offering premium pet food, fun toys, reliable grooming
-            supplies, and effective health solutions for both cats and dogs. At
-            Zippty, we believe every pet deserves the very best, and we’re
-            committed to making that a reality for you.
+            With years of experience in understanding pet behavior, we've seen the transformative impact that the right interactive toys can have on a pet's well-being. That's why we've carefully selected our premium toy range, featuring the advanced Interactive Cat Toy with its 2-speed adjustment and remote control capabilities, and the Joyzzz Automatic Laser Toy with its 5-angle patterns and USB power system. At Zippty, we believe every pet deserves engaging entertainment, and we're committed to making that a reality for you and your beloved companions.
           </p>
         </div>
       </div>
@@ -55,8 +44,7 @@ const AboutPage = () => {
       <WhyChooseUs />
       <OurMission />
       <AboutStore />
-      <OurTeam />
-      <div className="wrapper paddingTop paddingBottom">
+      <div className="wrapper paddingTop paddingBottom" data-aos="fade-up">
         <div className="relative w-full max-w-4xl mx-auto rounded-3xl overflow-hidden">
           <ReactPlayer
             url={aboutvideo}

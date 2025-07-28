@@ -10,11 +10,14 @@ const TwoDogs = () => {
           src={dogone}
           alt="dog-image"
           className="w-full h-full object-cover max-h-[23rem] rounded-2xl"
+          data-aos="fade-up"
         />
         <img
           src={dogtwo}
           alt="dog-image"
           className="w-full h-full object-cover max-h-[23rem] rounded-2xl"
+          data-aos="fade-up"
+          data-aos-delay="200"
         />
       </div>
     </div>

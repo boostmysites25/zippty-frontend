@@ -1,6 +1,3 @@
-import teamImage1 from "../assets/images/team/team-image-1.png";
-import teamImage2 from "../assets/images/team/team-image-2.png";
-import teamImage3 from "../assets/images/team/team-image-3.png";
 //categories images
 import accessories from "../assets/images/categories/accessories.jpeg";
 import toys from "../assets/images/categories/toys.jpeg";
@@ -15,50 +12,29 @@ export const navLinks = [
 export const BASE_API_URL = "https://zippty-backend.vercel.app";
 // export const BASE_API_URL = "http://localhost:7070";
 export const petCareFeatures = [
-  {
-    id: 1,
-    title: "Everything You Need for Your Pets",
-    description:
-      "We provide a vast selection of products for both cats and dogs, ensuring you can find everything you need for their health, comfort, and happiness—all in one place.",
-  },
+  // {
+  //   id: 1,
+  //   title: "Interactive Toys",
+  //   description:
+  //     "We specialize in high-quality interactive toys that keep your pets engaged, active, and entertained. Our carefully curated selection focuses on innovative products that stimulate your pet's natural instincts.",
+  // },
   {
     id: 2,
     title: "Trusted Quality",
     description:
-      "We believe your pets deserve only the best. That’s why we offer products from brands you can rely on, all selected for their superior quality and effectiveness.",
+      "We believe your pets deserve only the best entertainment. That's why we offer interactive toys from brands you can rely on, all selected for their superior quality, durability, and effectiveness in keeping pets engaged.",
   },
   {
     id: 3,
-    title: "For Every Stage of Life",
+    title: "For Every Energy Level",
     description:
-      "Whether your pet is a playful puppy, a senior dog, a mischievous kitten, or a laid-back adult cat, we have the perfect products to support them at every stage of their life.",
+      "Whether your pet is highly energetic and playful or prefers more gentle stimulation, we have the perfect interactive toys to match their energy levels and provide appropriate mental and physical exercise.",
   },
   {
     id: 4,
     title: "Seamless Shopping Experience",
     description:
-      "Shopping for your pets has never been easier. Our website is user-friendly, making it simple for you to find what you need and get it delivered straight to your door, fast.",
-  },
-];
-
-export const ourTeam = [
-  {
-    id: 1,
-    image: teamImage1,
-    name: "Caroline Washington",
-    position: "Seller",
-  },
-  {
-    id: 2,
-    image: teamImage2,
-    name: "Gerald Ferguson",
-    position: "Seller",
-  },
-  {
-    id: 3,
-    image: teamImage3,
-    name: "Averi Maddox",
-    position: "Seller",
+      "Finding the perfect interactive toy for your pet has never been easier. Our website is user-friendly, making it simple for you to discover engaging products and get them delivered straight to your door, fast.",
   },
 ];
 

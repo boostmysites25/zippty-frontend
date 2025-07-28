@@ -198,7 +198,7 @@ const AdminAllProducts = () => {
                     <p className="text-sm text-gray-600 mb-2">
                       {product.category || "Entertainment Toys"}
                     </p>
-                    <p className="font-bold mb-3">₹{product.price || "2500"}</p>
+                    <p className="font-bold mb-3">₹{product.amount}</p>
                   </div>
                 </div>
 
