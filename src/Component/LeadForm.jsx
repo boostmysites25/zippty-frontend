@@ -7,7 +7,7 @@ import {
   FaClock,
 } from "react-icons/fa";
 
-export default function ContactForm() {
+export default function LeadForm() {
   const {
     register,
     handleSubmit,

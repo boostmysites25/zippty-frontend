@@ -1,7 +1,7 @@
 import React from "react";
 import contactuspetimage from "../assets/images/contactuspetimage.png";
 import Banner from "../Component/Banner";
-import ContactForm from "../Component/LeadForm";
+import LeadForm from "../Component/LeadForm";
 import MapComponent from "../Component/MapComponent";
 
 const ContactusPage = () => {
@@ -16,11 +16,11 @@ const ContactusPage = () => {
     <div>
       <Banner bannerDetails={homeBannerDetails} />
       <div data-aos="fade-up">
-        <ContactForm />
+        <LeadForm />
       </div>
-      <div data-aos="fade-up" data-aos-delay="200">
+      {/* <div data-aos="fade-up" data-aos-delay="200">
         <MapComponent />
-      </div>
+      </div> */}
     </div>
   );
 };

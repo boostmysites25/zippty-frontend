@@ -1,42 +1,24 @@
-import React, { useEffect, useRef, useMemo } from "react";
+import React from "react";
 import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
 import "leaflet/dist/leaflet.css";
-
 import L from "leaflet";
-import markerIcon from "leaflet/dist/images/marker-icon.png";
-import markerShadow from "leaflet/dist/images/marker-shadow.png";
 
-// Fix for default icon
-let DefaultIcon = L.icon({
-  iconUrl: markerIcon,
-  shadowUrl: markerShadow,
-  iconSize: [25, 41],
-  iconAnchor: [12, 41],
-  popupAnchor: [1, -34],
-  shadowSize: [41, 41],
+// Fix for default icon issue in react-leaflet
+delete L.Icon.Default.prototype._getIconUrl;
+L.Icon.Default.mergeOptions({
+  iconRetinaUrl: require('leaflet/dist/images/marker-icon-2x.png'),
+  iconUrl: require('leaflet/dist/images/marker-icon.png'),
+  shadowUrl: require('leaflet/dist/images/marker-shadow.png'),
 });
 
-L.Marker.prototype.options.icon = DefaultIcon;
-
 const MapComponent = () => {
-  // Use useMemo to memoize the location array
-
-  const location = useMemo(() => [26.952498059942855, 75.79696180188547], []);
-
-  const mapRef = useRef(); // Reference to the map
-
-  // Center the map to the location when it loads
-  useEffect(() => {
-    if (mapRef.current) {
-      mapRef.current.setView(location, 10); // Set view to the location and zoom level
-    }
-  }, [location]); // Now location will not change on every render
+  const position = [26.952498059942855, 75.79696180188547];
 
   return (
     <div className="wrapper rounded-3xl overflow-hidden">
       <div className="rounded-3xl overflow-hidden">
         <MapContainer
-          center={location}
+          center={position}
           zoom={10}
           style={{
             height: "70vh",
@@ -44,16 +26,14 @@ const MapComponent = () => {
             zIndex: 0,
             borderRadius: "24px",
           }}
-          whenCreated={(mapInstance) => (mapRef.current = mapInstance)} // Save the map instance to ref
-          scrollWheelZoom={false} // Disable zooming with the scroll wheel
-          doubleClickZoom={false} // Disable zooming by double-clicking
-          //   dragging={false} // Disable dragging the map
+          scrollWheelZoom={false}
+          doubleClickZoom={false}
         >
           <TileLayer
             url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
             attribution="© OpenStreetMap contributors"
           />
-          <Marker position={location}>
+          <Marker position={position}>
             <Popup>Your location</Popup>
           </Marker>
         </MapContainer>
