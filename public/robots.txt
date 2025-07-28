@@ -1,3 +1,23 @@
-# https://www.robotstxt.org/robotstxt.html
 User-agent: *
-Disallow:
+Allow: /
+
+# Disallow admin pages and user-specific pages
+Disallow: /admin/
+Disallow: /login
+Disallow: /signup
+Disallow: /profile
+Disallow: /cartitems
+
+# Allow important pages
+Allow: /
+Allow: /shop
+Allow: /about-us
+Allow: /contact-us
+Allow: /product/
+Allow: /blog/
+
+# Sitemap location
+Sitemap: https://zippty.com/sitemap.xml
+
+# Crawl delay (optional)
+Crawl-delay: 1

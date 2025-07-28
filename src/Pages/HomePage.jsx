@@ -1,14 +1,15 @@
 import React, { useEffect, useState } from "react";
 import Banner from "../Component/Banner";
 import homepagepetsimage from "../assets/images/homepagepetsimage.png";
-// import CategorySlider from "../Component/CategorySlider";
-import FeaturedProducts from "../Component/FeaturedProducts";
 import HomeAbout from "../Component/HomeAbout";
 import Testimonials from "../Component/Testimonials";
 import Blogs from "../Component/Blogs";
 import ProductGrid from "../Component/ProductGrid";
+import SEO from "../Component/SEO";
 // import { products } from "../util/productsDetails";
 import { fetchProducts } from "../api/productapi";
+import { seoConfig } from "../utils/seoConfig";
+import { generateOrganizationSchema, generateWebsiteSchema } from "../utils/structuredData";
 const HomePage = () => {
   const [products, setProducts] = useState([]);
   const homeBannerDetails = {
@@ -26,8 +27,32 @@ const HomePage = () => {
     };
     getProducts();
   }, []);
+
+
+  // Structured data for homepage
+  const structuredData = [
+    generateOrganizationSchema(),
+    generateWebsiteSchema()
+  ];
+
   return (
     <div>
+      <SEO
+        title={seoConfig.home.title}
+        description={seoConfig.home.description}
+        keywords={seoConfig.home.keywords}
+        url="/"
+        type={seoConfig.home.type}
+        structuredData={structuredData}
+      />
+      <SEO
+        title={seoConfig.home.title}
+        description={seoConfig.home.description}
+        keywords={seoConfig.home.keywords}
+        url="/"
+        type={seoConfig.home.type}
+        structuredData={structuredData}
+      />
       <Banner bannerDetails={homeBannerDetails} />
       {/* <CategorySlider /> */}
       {/* <FeaturedProducts /> */}
