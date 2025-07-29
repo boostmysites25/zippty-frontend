@@ -18,9 +18,9 @@ const ContactusPage = () => {
       <div data-aos="fade-up">
         <LeadForm />
       </div>
-      {/* <div data-aos="fade-up" data-aos-delay="200">
+      <div data-aos="fade-up" data-aos-delay="200">
         <MapComponent />
-      </div> */}
+      </div>
     </div>
   );
 };

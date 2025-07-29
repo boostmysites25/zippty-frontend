@@ -3,12 +3,16 @@ import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
 import "leaflet/dist/leaflet.css";
 import L from "leaflet";
 
-// Fix for default icon issue in react-leaflet
+// Fix for default icon issue in react-leaflet v4
+import markerIcon from "leaflet/dist/images/marker-icon.png";
+import markerShadow from "leaflet/dist/images/marker-shadow.png";
+import markerIconRetina from "leaflet/dist/images/marker-icon-2x.png";
+
 delete L.Icon.Default.prototype._getIconUrl;
 L.Icon.Default.mergeOptions({
-  iconRetinaUrl: require('leaflet/dist/images/marker-icon-2x.png'),
-  iconUrl: require('leaflet/dist/images/marker-icon.png'),
-  shadowUrl: require('leaflet/dist/images/marker-shadow.png'),
+  iconRetinaUrl: markerIconRetina,
+  iconUrl: markerIcon,
+  shadowUrl: markerShadow,
 });
 
 const MapComponent = () => {
