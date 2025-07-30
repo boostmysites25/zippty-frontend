@@ -62,7 +62,7 @@ const HomePage = () => {
         <ProductGrid products={products.slice(0, 8)} />
       </div>
       <Testimonials />
-      <Blogs />
+      {/* <Blogs /> */}
     </div>
   );
 };
