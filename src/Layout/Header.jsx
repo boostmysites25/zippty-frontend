@@ -51,11 +51,11 @@ const Header = () => {
         <div className="flex items-center space-x-6">
           <div className="flex items-center space-x-2">
             <FaPhone size={16} />
-            <span className="text-sm">+91-XXXXX XXXXX</span>
+            <span className="text-sm">916367189188</span>
           </div>
           <div className="flex items-center space-x-2">
             <FaEnvelope size={16} />
-            <span className="text-sm">info@domain.com</span>
+            <span className="text-sm">info@zippty.in</span>
           </div>
         </div>
         <div className="flex items-center space-x-2">

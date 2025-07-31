@@ -317,8 +317,8 @@ const Footer = () => {
                 JP Colony, Shastri Nagar,
                 <br /> Jaipur, Rajasthan - 302016
               </li>
-              <li className="text-gray-600">+91-XXXXX XXXXX</li>
-              <li className="text-gray-600">info@domain.com</li>
+              <li className="text-gray-600">916367189188</li>
+              <li className="text-gray-600">info@zippty.in</li>
             </ul>
           </div>
         </div>

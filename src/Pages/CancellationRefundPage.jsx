@@ -320,7 +320,7 @@ const CancellationRefundPage = () => {
                 Rajasthan - 302016
               </p>
               <p>
-                <strong>Phone:</strong> +91-XXXXX XXXXX
+                <strong>Phone:</strong> 916367189188
               </p>
             </div>
           </section>

@@ -9,9 +9,9 @@ export const generateOrganizationSchema = () => ({
   "logo": `${process.env.REACT_APP_SITE_URL || "https://zippty.com"}/logo.png`,
   "contactPoint": {
     "@type": "ContactPoint",
-    "telephone": "+91-XXXXX XXXXX",
+    "telephone": "916367189188",
     "contactType": "Customer Service",
-    "email": "info@domain.com",
+    "email": "info@zippty.in",
     "availableLanguage": ["English", "Hindi"]
   },
   "address": {
@@ -92,8 +92,8 @@ export const generateLocalBusinessSchema = () => ({
   "name": "Zippty",
   "description": "Premium pet products and interactive toys store",
   "url": process.env.REACT_APP_SITE_URL || "https://zippty.com",
-  "telephone": "+91-XXXXX XXXXX",
-  "email": "info@domain.com",
+  "telephone": "916367189188",
+  "email": "info@zippty.in",
   "address": {
     "@type": "PostalAddress",
     "streetAddress": "JP Colony, Shastri Nagar",
