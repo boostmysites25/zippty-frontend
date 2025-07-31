@@ -57,7 +57,7 @@ const AllProducts = () => {
 
   if (loading) {
     return (
-      <div className="container mx-auto px-4 py-8 text-center">
+      <div className="wrapper mx-auto px-4 py-8 text-center">
         <p className="text-gray-500">Loading products...</p>
       </div>
     );
@@ -65,14 +65,14 @@ const AllProducts = () => {
 
   if (error) {
     return (
-      <div className="container mx-auto px-4 py-8 text-center">
+      <div className="wrapper mx-auto px-4 py-8 text-center">
         <p className="text-red-500">{error}</p>
       </div>
     );
   }
 
   return (
-    <div className="container mx-auto px-4 py-8">
+    <div className="wrapper mx-auto px-4 py-8">
       <div className="grid gap-8">
         {/* <ProductFilters /> */}
         <main className="lg:col-span-4">

@@ -15,7 +15,7 @@ const testimonials = [
     name: "Rajesh Patel",
     role: "Pet Owner",
     image: require('../assets/images/testi2.webp'),
-    text: "I bought the Joyzzz Automatic Cat Laser Toy for my two indoor cats, and they're obsessed! The 5 different angle patterns keep them guessing, and the fast and slow modes are perfect for different energy levels. My cats, Simba and Luna, chase it around the house for hours. The USB battery power is convenient, and the auto on/off feature saves battery life. The silent mode is great for late-night play sessions. Best investment for my cats' entertainment!",
+    text: "I bought the Automatic Cat Laser Toy for my two indoor cats, and they're obsessed! The 5 different angle patterns keep them guessing, and the fast and slow modes are perfect for different energy levels. My cats, Simba and Luna, chase it around the house for hours. The USB battery power is convenient, and the auto on/off feature saves battery life. The silent mode is great for late-night play sessions. Best investment for my cats' entertainment!",
   },
   {
     id: 3,
@@ -29,7 +29,7 @@ const testimonials = [
     name: "Arjun Singh",
     role: "Pet Parent",
     image: require('../assets/images/testi4.webp'),
-    text: "The Joyzzz laser toy has transformed my lazy cat, Mittens, into an active hunter! The 2-speed patterns are brilliant - she loves the challenge of the fast mode and the precision of the slow mode. The 5 different angles ensure she never gets bored, and the automatic features work perfectly. Mittens now wakes me up every morning ready to play. The USB charging is eco-friendly, and the build quality is excellent. Worth every penny!",
+    text: "The laser toy has transformed my lazy cat, Mittens, into an active hunter! The 2-speed patterns are brilliant - she loves the challenge of the fast mode and the precision of the slow mode. The 5 different angles ensure she never gets bored, and the automatic features work perfectly. Mittens now wakes me up every morning ready to play. The USB charging is eco-friendly, and the build quality is excellent. Worth every penny!",
   },
 ];
 

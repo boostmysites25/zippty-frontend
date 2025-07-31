@@ -13,7 +13,7 @@ const Banner = ({ bannerDetails }) => {
       className="relative overflow-hidden"
       
     >
-      <div className="wrapper grid md:grid-cols-2 px-6 py-16 items-center">
+      <div className="wrapper grid md:grid-cols-[60%_1fr] px-6 py-16 items-center">
         <div
           className="w-full relative"
         >

@@ -10,7 +10,7 @@ import { generateCollectionPageSchema, generateBreadcrumbSchema } from "../utils
 
 const ProductsPage = () => {
   const aboutBannerDetails = {
-    mainHeading: "The friendly and caring small pet store",
+    mainHeading: "Making pet care simple fun and full of love",
     paragraph: `At Zippty, we know your pets are more than just animals—they’re family. Whether you have a curious kitten or an energetic dog,`,
     image: shoppetsimage,
   };

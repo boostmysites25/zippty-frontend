@@ -13,7 +13,7 @@ import { generateOrganizationSchema, generateWebsiteSchema } from "../utils/stru
 const HomePage = () => {
   const [products, setProducts] = useState([]);
   const homeBannerDetails = {
-    mainHeading: "The best for your best friend.",
+    mainHeading: "Joy for them love from you only at Zippty",
     paragraph: `At Zippty, we know your pets are more than just animals—they're family. Whether you have a curious kitten or an energetic dog,`,
     image: homepagepetsimage,
     isHome: true,
@@ -37,14 +37,6 @@ const HomePage = () => {
 
   return (
     <div>
-      <SEO
-        title={seoConfig.home.title}
-        description={seoConfig.home.description}
-        keywords={seoConfig.home.keywords}
-        url="/"
-        type={seoConfig.home.type}
-        structuredData={structuredData}
-      />
       <SEO
         title={seoConfig.home.title}
         description={seoConfig.home.description}
