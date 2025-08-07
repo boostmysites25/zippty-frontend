@@ -17,6 +17,8 @@ import AdminAllProducts from "./Admin/AdminPage/AdminAllProducts";
 import AdminOrderList from "./Admin/AdminPage/AdminOrderList";
 import AdminOrderDetails from "./Admin/AdminPage/AdminOrderDetails";
 import AdminAddProduct from "./Admin/AdminPage/AdminAddProduct";
+import AdminLogin from "./Admin/AdminLogin";
+import AdminProtectedRoute from "./Admin/Components/AdminProtectedRoute";
 import Login from "./Pages/Login";
 import Signup from "./Pages/Signup";
 import ProfilePage from "./Pages/ProfilePage";
@@ -42,11 +44,20 @@ const AppRouter = createBrowserRouter([
     ],
   },
 
+  // Admin login route (public)
+  { path: "/admin/login", element: <AdminLogin /> },
+
+  // Protected admin routes
   {
     path: "/admin",
-    element: <AdminLayout />,
+    element: (
+      <AdminProtectedRoute>
+        <AdminLayout />
+      </AdminProtectedRoute>
+    ),
     children: [
       { path: "/admin", element: <AdminHome /> },
+      { path: "/admin/dashboard", element: <AdminHome /> },
       { path: "/admin/all-products", element: <AdminAllProducts /> },
       { path: "/admin/order-list", element: <AdminOrderList /> },
       { path: "/admin/order-details/:id", element: <AdminOrderDetails /> },

@@ -1,110 +1,224 @@
-# Getting Started with Create React App
+# Zippty Admin Panel
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A comprehensive admin panel for managing the Zippty e-commerce platform with authentication, dashboard analytics, product management, order management, and user management.
 
-## Available Scripts
+## Features
 
-In the project directory, you can run:
+### 🔐 Authentication
+- Secure admin login/logout system
+- JWT-based authentication
+- Protected admin routes
+- Session management with localStorage
 
-### `npm start`
+### 📊 Dashboard
+- Real-time statistics (orders, revenue, products, users)
+- Sales analytics with charts
+- Recent orders overview
+- Percentage change indicators
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### 📦 Product Management
+- View all products with pagination
+- Add new products
+- Edit existing products
+- Delete products
+- Bulk operations
+- Stock management
+- Product statistics
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### 📋 Order Management
+- View all orders with pagination
+- Update order status (pending, processing, shipped, delivered, cancelled)
+- Bulk status updates
+- Order details view
+- Customer information
 
-### `npm test`
+### 👥 User Management
+- View all users with pagination
+- User details and statistics
+- Block/unblock users
+- Delete users
+- User analytics
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Backend API Endpoints
 
-### `npm run build`
+### Authentication
+- `POST /api/admin/login` - Admin login
+- `GET /api/admin/profile` - Get admin profile
+- `PUT /api/admin/profile` - Update admin profile
+- `PUT /api/admin/change-password` - Change admin password
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Dashboard
+- `GET /api/admin/dashboard/stats` - Get dashboard statistics
+- `GET /api/admin/dashboard/recent-orders` - Get recent orders
+- `GET /api/admin/dashboard/sales-analytics` - Get sales analytics
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Products
+- `GET /api/products` - Get all products (with admin filters)
+- `POST /api/products` - Add new product
+- `PUT /api/products/:id` - Update product
+- `DELETE /api/products/:id` - Delete product
+- `DELETE /api/products/bulk-delete` - Bulk delete products
+- `PATCH /api/products/:id/stock` - Update product stock
+- `GET /api/products/admin/stats` - Get product statistics
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Orders
+- `GET /api/orders` - Get all orders (admin view)
+- `PATCH /api/orders/:id/status` - Update order status
 
-### `npm run eject`
+### Users
+- `GET /api/admin/users` - Get all users
+- `GET /api/admin/users/:id` - Get user details
+- `PATCH /api/admin/users/:id/status` - Update user status
+- `DELETE /api/admin/users/:id` - Delete user
+- `GET /api/admin/users/stats` - Get user statistics
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## Setup Instructions
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### Backend Setup
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+1. **Navigate to backend directory:**
+   ```bash
+   cd zipptybackend
+   ```
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+2. **Install dependencies:**
+   ```bash
+   npm install
+   ```
 
-## Learn More
+3. **Set up environment variables:**
+   Create a `.env` file in the backend directory with:
+   ```env
+   MONGO_URI=your_mongodb_connection_string
+   JWT_SECRET=your_jwt_secret_key
+   PORT=7070
+   ```
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+4. **Create initial admin user:**
+   ```bash
+   node scripts/createAdmin.js
+   ```
+   This creates a default admin with:
+   - Email: `admin@zippty.com`
+   - Password: `admin123`
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+5. **Start the backend server:**
+   ```bash
+   npm start
+   ```
 
-### Code Splitting
+### Frontend Setup
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+1. **Navigate to frontend directory:**
+   ```bash
+   cd zippty-frontend
+   ```
 
-### Analyzing the Bundle Size
+2. **Install dependencies:**
+   ```bash
+   npm install
+   ```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+3. **Set up environment variables:**
+   Create a `.env` file in the frontend directory with:
+   ```env
+   REACT_APP_API_URL=http://localhost:7070
+   ```
 
-### Making a Progressive Web App
+4. **Start the frontend development server:**
+   ```bash
+   npm start
+   ```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+## Usage
 
-### Advanced Configuration
+### Accessing the Admin Panel
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+1. Open your browser and navigate to `http://localhost:3000/admin/login`
+2. Login with the default credentials:
+   - Email: `admin@zippty.com`
+   - Password: `admin123`
+3. You'll be redirected to the admin dashboard
 
-### Deployment
+### Admin Panel Navigation
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+- **Dashboard** (`/admin/dashboard`) - Overview and analytics
+- **All Products** (`/admin/all-products`) - Product management
+- **Order List** (`/admin/order-list`) - Order management
+- **Add Product** (`/admin/add-product`) - Add new products
 
-### `npm run build` fails to minify
+### Security Features
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- **Protected Routes**: All admin pages require authentication
+- **JWT Tokens**: Secure token-based authentication
+- **Role-based Access**: Only admin users can access admin features
+- **Session Management**: Automatic token validation and refresh
+- **Secure Logout**: Proper token cleanup on logout
+
+## File Structure
+
+```
+zippty-frontend/src/Admin/
+├── AdminLayout/           # Admin layout components
+├── AdminPage/            # Admin page components
+├── api/                  # API functions
+├── components/           # Reusable admin components
+├── context/              # Admin authentication context
+└── AdminLogin.jsx        # Admin login page
+
+zipptybackend/
+├── controllers/          # Backend controllers
+├── middleware/           # Authentication middleware
+├── models/              # Database models
+├── routes/              # API routes
+└── scripts/             # Utility scripts
+```
+
+## API Response Format
+
+All API responses follow a consistent format:
+
+```json
+{
+  "status": true/false,
+  "message": "Success/Error message",
+  "data": {
+    // Response data
+  }
+}
+```
+
+## Error Handling
+
+- Frontend displays user-friendly error messages
+- Backend provides detailed error responses
+- Network errors are handled gracefully
+- Loading states for better UX
+
+## Performance Optimizations
+
+- Pagination for large datasets
+- Efficient database queries
+- Optimized API calls
+- Caching strategies
+- Lazy loading where appropriate
+
+## Contributing
+
+1. Follow the existing code structure
+2. Use proper error handling
+3. Add appropriate loading states
+4. Test API integrations
+5. Update documentation as needed
+
+## Support
+
+For issues or questions:
+1. Check the console for error messages
+2. Verify API endpoints are working
+3. Ensure environment variables are set correctly
+4. Check database connectivity
 
 ---
 
-export default function ProfileFrame() {
-return (
-
-<div className="relative w-[500px] h-[500px] flex items-center justify-center">
-{/_ Orange blob SVG _/}
-<svg
-viewBox="0 0 500 500"
-className="absolute w-full h-full"
-style={{ filter: "drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.1))" }} >
-<defs>
-<linearGradient id="orangeGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-<stop offset="0%" style={{ stopColor: "#FF8A65" }} />
-<stop offset="100%" style={{ stopColor: "#FFA07A" }} />
-</linearGradient>
-</defs>
-<path
-          d="M250,50 
-          C 380,50 450,150 450,250
-          C 450,350 380,450 250,450
-          C 120,450 50,350 50,250
-          C 50,150 120,50 250,50 Z"
-          fill="url(#orangeGradient)"
-        />
-</svg>
-
-      {/* Profile image */}
-      <div className="relative w-[300px] h-[300px] rounded-full overflow-hidden">
-        <img
-          src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Screenshot%202025-02-15%20at%206.05.07%E2%80%AFPM-juXrC0xGOeLCrw4Rz1akKETJVWH2Sq.png"
-          alt="Profile"
-          className="w-full h-full object-cover"
-        />
-      </div>
-    </div>
-
-)
-}
+**Note**: Remember to change the default admin password after first login for security purposes.

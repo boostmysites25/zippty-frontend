@@ -5,6 +5,7 @@ import AppRouter from "./App";
 import { RouterProvider } from "react-router-dom";
 import { WishlistProvider } from "./Store/wishlistContext";
 import { CartProvider } from "./Store/cartContext";
+import { AdminAuthProvider } from "./Admin/context/AdminAuthContext";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { HelmetProvider } from 'react-helmet-async';
@@ -23,14 +24,14 @@ const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
     <HelmetProvider>
-      <HelmetProvider>
-      <CartProvider>
-            <WishlistProvider>
+      <AdminAuthProvider>
+        <CartProvider>
+          <WishlistProvider>
             <RouterProvider router={AppRouter} />
-        </WishlistProvider>
+          </WishlistProvider>
         </CartProvider>
         <ToastContainer />
-    </HelmetProvider>
+      </AdminAuthProvider>
     </HelmetProvider>
   </React.StrictMode>
 );

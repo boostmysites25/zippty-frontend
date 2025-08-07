@@ -2,8 +2,7 @@ import { useState, useEffect, useRef } from "react";
 import { BsThreeDotsVertical } from "react-icons/bs";
 import { FaArrowUp } from "react-icons/fa";
 import { Link } from "react-router-dom";
-import axios from "axios";
-import { BASE_API_URL } from "../api/productApi";
+import { getAllProducts, deleteProduct } from "../api/productApi";
 
 const AdminAllProducts = () => {
   // State for products, pagination, loading, error, and popup
@@ -37,12 +36,12 @@ const AdminAllProducts = () => {
     setLoading(true);
     setError("");
     try {
-      const response = await axios.get(`${BASE_API_URL}/api/products`);
+      const response = await getAllProducts(page, productsPerPage);
       setProducts(response.data.products || []);
       setTotalPages(Math.ceil(response.data.total / productsPerPage) || 1);
       setCurrentPage(page);
     } catch (err) {
-      setError(err.response?.data?.message || "Failed to fetch products");
+      setError(err.message || "Failed to fetch products");
       setProducts([]);
     } finally {
       setLoading(false);
@@ -50,12 +49,12 @@ const AdminAllProducts = () => {
   };
 
   // Delete product
-  const deleteProduct = async (productId) => {
+  const handleDeleteProduct = async (productId) => {
     try {
-      await axios.delete(`${BASE_API_URL}/api/products/${productId}`);
+      await deleteProduct(productId);
       setProducts(products.filter((product) => product._id !== productId));
     } catch (err) {
-      setError(err.response?.data?.message || "Failed to delete product");
+      setError(err.message || "Failed to delete product");
     }
     setPopup({ visible: false, productId: null, x: 0, y: 0 });
   };
@@ -202,19 +201,19 @@ const AdminAllProducts = () => {
                   </div>
                 </div>
 
-                {/* <button
+                <button
                   className="absolute top-2 right-2 text-gray-600 hover:text-gray-800"
                   onClick={(e) => handleThreeDotClick(product._id, e)}
                 >
                   <BsThreeDotsVertical />
-                </button> */}
+                </button>
               </div>
 
               {/* Popup Menu */}
-              {/* {popup.visible && popup.productId === product._id && (
+              {popup.visible && popup.productId === product._id && (
                 <div
                   ref={popupRef}
-                  className="absolute z-50 bg-black border border-gray-300 rounded-md shadow-lg"
+                  className="absolute z-50 bg-white border border-gray-300 rounded-md shadow-lg"
                   style={{ top: `${popup.y}px`, left: `${popup.x}px` }}
                 >
                   <div className="flex flex-col">
@@ -226,7 +225,7 @@ const AdminAllProducts = () => {
                     </Link>
                     <button
                       className="px-4 py-2 text-sm text-red-600 hover:bg-gray-100 text-left"
-                      onClick={() => deleteProduct(product._id)}
+                      onClick={() => handleDeleteProduct(product._id)}
                     >
                       Delete
                     </button>
@@ -245,7 +244,7 @@ const AdminAllProducts = () => {
                     </button>
                   </div>
                 </div>
-              )} */}
+              )}
 
               <div className="pt-2">
                 <div className="mb-4">
@@ -255,7 +254,7 @@ const AdminAllProducts = () => {
                       "This is a placeholder description for the product."}
                   </p>
 
-                  {/* <div className="border p-3 flex flex-col gap-3 rounded-xl border-gray-400">
+                  <div className="border p-3 flex flex-col gap-3 rounded-xl border-gray-400">
                     <div>
                       <div className="flex justify-between text-sm mb-1">
                         <span>Sales</span>
@@ -286,7 +285,7 @@ const AdminAllProducts = () => {
                         <div>{product.remaining || 0}</div>
                       </div>
                     </div>
-                  </div> */}
+                  </div>
                 </div>
               </div>
             </Link>

@@ -1,6 +1,8 @@
 import React, { useState } from "react";
-import { Bell, ChevronDown, Search } from "react-feather";
+import { Bell, ChevronDown, Search, LogOut, User } from "react-feather";
 import { FiHome, FiPackage, FiClipboard } from "react-icons/fi";
+import { useNavigate } from "react-router-dom";
+import { useAdminAuth } from "../context/AdminAuthContext";
 import logo from "../../assets/images/logo/logo.png";
 
 const links = [
@@ -19,9 +21,16 @@ const links = [
 
 const AdminHeader = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const navigate = useNavigate();
+  const { admin, logout } = useAdminAuth();
 
   const togglePopover = () => {
     setIsOpen(!isOpen);
+  };
+
+  const handleLogout = () => {
+    logout();
+    navigate("/admin/login");
   };
 
   return (
@@ -40,18 +49,23 @@ const AdminHeader = () => {
             <Bell size={20} />
           </button>
           <div className="ml-2 hidden md:flex items-center px-3 py-1 border border-gray-300 rounded-md text-sm focus:outline-none">
-            ADMIN
+            <User size={16} className="mr-2" />
+            {admin?.name || "ADMIN"}
           </div>
           <button
             className="ml-2 flex md:hidden items-center px-3 py-1 border border-gray-300 rounded-md text-sm focus:outline-none"
             onClick={togglePopover}
           >
-            <span>ADMIN</span>
+            <span>{admin?.name || "ADMIN"}</span>
             <ChevronDown size={16} className="ml-1" />
           </button>
 
           {isOpen && (
             <div className="absolute right-0 mt-[10rem] w-48 bg-white border border-gray-200 rounded-lg shadow-lg z-10">
+              <div className="px-4 py-2 border-b border-gray-200">
+                <div className="text-sm font-medium text-gray-900">{admin?.name || "Admin"}</div>
+                <div className="text-xs text-gray-500">{admin?.email}</div>
+              </div>
               {links.map((link, index) => (
                 <a
                   key={index}
@@ -62,6 +76,13 @@ const AdminHeader = () => {
                   <span className="ml-2">{link.label}</span>
                 </a>
               ))}
+              <button
+                onClick={handleLogout}
+                className="w-full flex items-center px-4 py-2 hover:bg-red-50 text-red-600 border-t border-gray-200"
+              >
+                <LogOut size={16} />
+                <span className="ml-2">Logout</span>
+              </button>
             </div>
           )}
         </div>
